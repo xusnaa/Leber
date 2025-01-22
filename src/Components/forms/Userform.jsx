@@ -1,20 +1,14 @@
 import { Input, Form, Button } from "antd";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 const Userform = ({ onFinish: handleSubmit, initialValues }) => {
   const [form] = Form.useForm();
-
-  const [user, setUser] = useState({
-    name: initialValues?.name || "",
-    email: initialValues?.email || "",
-    phone: initialValues?.phone || "",
-  });
 
   useEffect(() => {
     if (initialValues) {
       form.setFieldsValue(initialValues);
     }
-  }, [initialValues, form]);
+  }, [initialValues]);
 
   const handleFormSubmit = (values) => {
     console.log("Submitted values:", values);
@@ -25,10 +19,14 @@ const Userform = ({ onFinish: handleSubmit, initialValues }) => {
 
   return (
     <>
-      <div className="p-7 flex items-center justify-center h-screen">
+      <div className="p-7 flex items-center justify-center">
         <div className="bg-white p-7 rounded-lg shadow-md text-black w-full max-w-md">
           <h2 className="text-2xl font-bold mb-4 text-center">User Form</h2>
-          <Form form={form} onFinish={handleFormSubmit} initialValues={user}>
+          <Form
+            form={form}
+            onFinish={handleFormSubmit}
+            initialValues={initialValues}
+          >
             <Form.Item label="Name" name="name">
               <Input placeholder="Enter your name" />
             </Form.Item>

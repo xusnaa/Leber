@@ -10,11 +10,18 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.64.2",
+    "@tanstack/react-query-devtools": "^5.64.2",
     "antd": "^5.23.1",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "mongodb": "^6.12.0",
+    "mongoose": "^8.9.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^7.1.3",
     "react-typewriter-effect": "^1.1.0",
+    "uuid": "^11.0.5",
     "world-countries": "^5.0.0"
   },
   "devDependencies": {
