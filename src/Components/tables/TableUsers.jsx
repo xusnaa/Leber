@@ -8,7 +8,6 @@ const TableUsers = () => {
   const navigate = useNavigate();
   const queryClient = useQueryClient();
 
-  // Fetch users data
   const {
     isLoading,
     isError,
@@ -17,25 +16,9 @@ const TableUsers = () => {
   } = useQuery({
     queryKey: ["users"],
     queryFn: Listusers,
-    staleTime: 5000, // Keeps data fresh for 5 seconds before refetching
+    staleTime: 5000,
     cacheTime: 10000,
   });
-
-  // Mutation for deleting user
-  const deleteMutation = useMutation(DeleteUser, {
-    onSuccess: () => {
-      message.success("User deleted successfully");
-      queryClient.invalidateQueries({ queryKey: ["users"] }); // Refresh users list
-    },
-    onError: () => {
-      message.error("Failed to delete user");
-    },
-  });
-
-  // Function to handle delete action
-  const handleDelete = (id) => {
-    deleteMutation.mutate(id);
-  };
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -44,9 +27,23 @@ const TableUsers = () => {
     return <div>Error: {error.message}</div>;
   }
 
+  // const deleteUserMutation = useMutation(DeleteUser, {
+  //   onSuccess: () => {
+  //     message.success("User deleted successfully!");
+  //     queryClient.invalidateQueries(["users"]); // Refresh user list
+  //   },
+  //   onError: (error) => {
+  //     message.error(`Failed to delete user: ${error.message}`);
+  //   },
+  // });
+
+  // const handleDelete = (id) => {
+  //   deleteUserMutation.mutate(id);
+  // };
+
   return (
     <div className="p-8">
-      <Table dataSource={users || []} rowKey="_id" pagination={{ pageSize: 5 }}>
+      <Table dataSource={users} rowKey="_id" pagination={{ pageSize: 5 }}>
         <Table.Column title="Name" dataIndex="name" key="name" />
         <Table.Column title="Email" dataIndex="email" key="email" />
         <Table.Column title="Phone" dataIndex="phone" key="phone" />
@@ -58,19 +55,21 @@ const TableUsers = () => {
               <Button
                 type="primary"
                 onClick={() => navigate(`/user/${record._id}`)}
+                className="bg-gray-700 text-white"
               >
                 Read
               </Button>
               <Button
                 type="default"
-                onClick={() => navigate(`/user/${record._id}/edit`)}
+                onClick={() => navigate(`/user/${record._id}`)}
+                className="bg-gray-700 text-white"
               >
                 Edit
               </Button>
               <Button
-                type="primary"
-                danger
-                onClick={() => handleDelete(record._id)}
+                type="default"
+                onClick={() => navigate(`/user/${record._id}`)}
+                className="bg-gray-700 text-white"
               >
                 Delete
               </Button>
