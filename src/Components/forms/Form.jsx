@@ -1,6 +1,6 @@
 import React from "react";
 import "antd/dist/reset.css";
-import { Button, Form, Input, Select, Checkbox } from "antd";
+import { Button, Form, Input, Select, Checkbox, notification } from "antd";
 import countries from "world-countries";
 import Container from "../Container";
 
@@ -60,7 +60,7 @@ const FormComponent = () => {
     }
 
     if (!hasError) {
-      alert("Validation successful!");
+      notification.success({ message: "Validation successful!" });
     }
   };
 

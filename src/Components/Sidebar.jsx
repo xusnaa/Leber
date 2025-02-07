@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { Flex, Menu } from "antd";
 import { FaLeaf } from "react-icons/fa6";
 import {
@@ -13,6 +14,7 @@ import {
 import React from "react";
 
 const Sidebar = () => {
+  const navigate = useNavigate();
   return (
     <>
       <Flex align="center" justify="center">
@@ -24,20 +26,21 @@ const Sidebar = () => {
         mode="inline"
         defaultSelectedKeys={[1]}
         className="flex flex-col gap-7 text-lg"
+        onClick={({ key }) => navigate(key)}
         items={[
           {
-            key: "1",
+            key: "/dashboard",
             icon: <UserOutlined />,
             label: "Dashboard",
           },
 
           {
-            key: "2",
+            key: "/orders",
             icon: <OrderedListOutlined />,
             label: "Orders",
           },
           {
-            key: "3",
+            key: "/delievry",
             icon: <CarryOutOutlined />,
             label: "Delivery",
           },

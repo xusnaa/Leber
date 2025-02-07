@@ -30,10 +30,13 @@ const Dashboard = () => {
           />
         </Sider>
         <Layout className="flex flex-col bg-gray-100">
-          <Header className="bg-white p-7 mb-20">
+          <Header
+            className="bg-white"
+            style={{ padding: "3rem", marginBottom: "3rem" }}
+          >
             <CustomerHeader />
           </Header>
-          <Content className="p-6">
+          <Content className="p-6 mt-10">
             <Flex gap="large">
               <MainContent />
               <SideContent />
