@@ -71,3 +71,75 @@ export const ActivityInfo = [
     day: "5days ago",
   },
 ];
+
+export const Columns = [
+  {
+    title: "Key",
+    dataIndex: "key",
+    key: "key",
+    children: [
+      { title: "Superkunde", value: "Kunde-Superkunde" },
+      { title: "Lieber Kunde", value: "Kunde-Lieber Kunde" },
+    ],
+  },
+  { title: "Verwendung", dataIndex: "verwendung", key: "verwendung" },
+  {
+    title: "Zugehörig",
+    dataIndex: "zugehoerig",
+    key: "zugehoerig",
+    children: [{ title: "Lager Nord", value: "Lager-Lager Nord" }],
+  },
+  {
+    title: "Art",
+    dataIndex: "tele_art",
+    key: "tele_art",
+    children: [
+      { title: "Max Mustermann", value: "Mitarbeiter-Max Mustermann" },
+    ],
+  },
+];
+
+export const treeData = [
+  {
+    title: "Kunde",
+    value: "Kunde",
+    children: [
+      { title: "Superkunde", value: "Kunde-Superkunde" },
+      { title: "Lieber Kunde", value: "Kunde-Lieber Kunde" },
+    ],
+  },
+  {
+    title: "Lager",
+    value: "Lager",
+    children: [{ title: "Lager Nord", value: "Lager-Lager Nord" }],
+  },
+  {
+    title: "Mitarbeiter",
+    value: "Mitarbeiter",
+    children: [
+      { title: "Max Mustermann", value: "Mitarbeiter-Max Mustermann" },
+    ],
+  },
+];
+
+export const data = [
+  {
+    key: 1,
+    verwendung: "Kunde",
+    zugehoerig: "Superkunde",
+    tele_art: "Telefon",
+  },
+  {
+    key: 2,
+    verwendung: "Kunde",
+    zugehoerig: "Lieber Kunde",
+    tele_art: "Telefon",
+  },
+  { key: 3, verwendung: "Lager", zugehoerig: "Lager Nord", tele_art: "Fax" },
+  {
+    key: 4,
+    verwendung: "Mitarbeiter",
+    zugehoerig: "Max Mustermann",
+    tele_art: "Handy",
+  },
+];

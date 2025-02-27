@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Users from "./pages/Users";
 import Person from "./pages/Person";
 import Dashboard from "./pages/Dashboard";
+import TableExam from "./Components/tables/tableExam";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/tables" element={<Tables />} />
           <Route path="/users" element={<Users />} />
           <Route path="/user/:id" element={<Person />} />
+          <Route path="/user/exam" element={<TableExam />} />
         </Routes>
       </Router>
     </div>
