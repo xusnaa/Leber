@@ -5,6 +5,7 @@ import Users from "./pages/Users";
 import Person from "./pages/Person";
 import Dashboard from "./pages/Dashboard";
 import TableExam from "./Components/tables/tableExam";
+import Weather from "./pages/Weather";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/forms" element={<Home />} />
           <Route path="/tables" element={<Tables />} />
           <Route path="/users" element={<Users />} />
+          <Route path="/weather" element={<Weather />} />
           <Route path="/user/:id" element={<Person />} />
           <Route path="/user/exam" element={<TableExam />} />
         </Routes>

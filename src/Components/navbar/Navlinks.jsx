@@ -12,6 +12,9 @@ const Navlinks = () => {
       <a href="/Users" className="text-black">
         Users
       </a>
+      <a href="/Weather" className="text-black">
+        Weather
+      </a>
     </div>
   );
 };
